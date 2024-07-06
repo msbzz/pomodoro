@@ -10,25 +10,27 @@ class Cronometro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final store = Provider.of<PomodoroStore>(context);
-    
-    return Container(
-        color:store.estaTrabalhando()? Colors.red: Colors.green,
+
+    return Observer(
+      builder: (_) => Container(
+        color: store.estaTrabalhando() ? Colors.red : Colors.green,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                store.estaTrabalhando()?'Hora de Trabalhar':'Hora de Descansar',
+                store.estaTrabalhando()
+                    ? 'Hora de Trabalhar'
+                    : 'Hora de Descansar',
                 style: TextStyle(fontSize: 80, color: Colors.white),
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
-                '${store.minutos.toString().padLeft(2,'0')}:${store.segundos.toString().padLeft(2,'0')}',
+                '${store.minutos.toString().padLeft(2, '0')}:${store.segundos.toString().padLeft(2, '0')}',
                 style: TextStyle(
                   fontSize: 120,
                   color: Colors.white,
@@ -37,10 +39,10 @@ class Cronometro extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Observer(builder:(_)=> Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if(!store.iniciado)
+                  if (!store.iniciado)
                     Padding(
                       padding: EdgeInsets.only(right: 10),
                       child: CronometroBotao(
@@ -49,8 +51,7 @@ class Cronometro extends StatelessWidget {
                         click: store.iniciar,
                       ),
                     ),
-
-                  if(store.iniciado)  
+                  if (store.iniciado)
                     Padding(
                       padding: EdgeInsets.only(right: 10),
                       child: CronometroBotao(
@@ -60,7 +61,7 @@ class Cronometro extends StatelessWidget {
                       ),
                     ),
                   Padding(
-                    padding: EdgeInsets.only(left:10),
+                    padding: EdgeInsets.only(left: 10),
                     child: CronometroBotao(
                       texto: 'reiniciar',
                       icone: Icons.refresh,
@@ -68,10 +69,11 @@ class Cronometro extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
-              )
+              ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
