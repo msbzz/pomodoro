@@ -57,35 +57,67 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
     });
   }
 
-  late final _$tempoTrabalhoAtom =
-      Atom(name: '_PomodoroStore.tempoTrabalho', context: context);
+  late final _$tempoTrabalhoMinAtom =
+      Atom(name: '_PomodoroStore.tempoTrabalhoMin', context: context);
 
   @override
-  int get tempoTrabalho {
-    _$tempoTrabalhoAtom.reportRead();
-    return super.tempoTrabalho;
+  int get tempoTrabalhoMin {
+    _$tempoTrabalhoMinAtom.reportRead();
+    return super.tempoTrabalhoMin;
   }
 
   @override
-  set tempoTrabalho(int value) {
-    _$tempoTrabalhoAtom.reportWrite(value, super.tempoTrabalho, () {
-      super.tempoTrabalho = value;
+  set tempoTrabalhoMin(int value) {
+    _$tempoTrabalhoMinAtom.reportWrite(value, super.tempoTrabalhoMin, () {
+      super.tempoTrabalhoMin = value;
     });
   }
 
-  late final _$tempoDescansoAtom =
-      Atom(name: '_PomodoroStore.tempoDescanso', context: context);
+  late final _$tempoTrabalhoSegAtom =
+      Atom(name: '_PomodoroStore.tempoTrabalhoSeg', context: context);
 
   @override
-  int get tempoDescanso {
-    _$tempoDescansoAtom.reportRead();
-    return super.tempoDescanso;
+  int get tempoTrabalhoSeg {
+    _$tempoTrabalhoSegAtom.reportRead();
+    return super.tempoTrabalhoSeg;
   }
 
   @override
-  set tempoDescanso(int value) {
-    _$tempoDescansoAtom.reportWrite(value, super.tempoDescanso, () {
-      super.tempoDescanso = value;
+  set tempoTrabalhoSeg(int value) {
+    _$tempoTrabalhoSegAtom.reportWrite(value, super.tempoTrabalhoSeg, () {
+      super.tempoTrabalhoSeg = value;
+    });
+  }
+
+  late final _$tempoDescansoMinAtom =
+      Atom(name: '_PomodoroStore.tempoDescansoMin', context: context);
+
+  @override
+  int get tempoDescansoMin {
+    _$tempoDescansoMinAtom.reportRead();
+    return super.tempoDescansoMin;
+  }
+
+  @override
+  set tempoDescansoMin(int value) {
+    _$tempoDescansoMinAtom.reportWrite(value, super.tempoDescansoMin, () {
+      super.tempoDescansoMin = value;
+    });
+  }
+
+  late final _$tempoDescansoSegAtom =
+      Atom(name: '_PomodoroStore.tempoDescansoSeg', context: context);
+
+  @override
+  int get tempoDescansoSeg {
+    _$tempoDescansoSegAtom.reportRead();
+    return super.tempoDescansoSeg;
+  }
+
+  @override
+  set tempoDescansoSeg(int value) {
+    _$tempoDescansoSegAtom.reportWrite(value, super.tempoDescansoSeg, () {
+      super.tempoDescansoSeg = value;
     });
   }
 
@@ -142,44 +174,88 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
   }
 
   @override
-  void incrementarTempoTrabalho() {
+  void incrementarTempoTrabalhoMin() {
     final _$actionInfo = _$_PomodoroStoreActionController.startAction(
-        name: '_PomodoroStore.incrementarTempoTrabalho');
+        name: '_PomodoroStore.incrementarTempoTrabalhoMin');
     try {
-      return super.incrementarTempoTrabalho();
+      return super.incrementarTempoTrabalhoMin();
     } finally {
       _$_PomodoroStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void decrementarTempoTrabalho() {
+  void incrementarTempoTrabalhoSeg() {
     final _$actionInfo = _$_PomodoroStoreActionController.startAction(
-        name: '_PomodoroStore.decrementarTempoTrabalho');
+        name: '_PomodoroStore.incrementarTempoTrabalhoSeg');
     try {
-      return super.decrementarTempoTrabalho();
+      return super.incrementarTempoTrabalhoSeg();
     } finally {
       _$_PomodoroStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void incrementarTempoDescanso() {
+  void decrementarTempoTrabalhoMin() {
     final _$actionInfo = _$_PomodoroStoreActionController.startAction(
-        name: '_PomodoroStore.incrementarTempoDescanso');
+        name: '_PomodoroStore.decrementarTempoTrabalhoMin');
     try {
-      return super.incrementarTempoDescanso();
+      return super.decrementarTempoTrabalhoMin();
     } finally {
       _$_PomodoroStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void decrementarTempoDescanso() {
+  void decrementarTempoTrabalhoSeg() {
     final _$actionInfo = _$_PomodoroStoreActionController.startAction(
-        name: '_PomodoroStore.decrementarTempoDescanso');
+        name: '_PomodoroStore.decrementarTempoTrabalhoSeg');
     try {
-      return super.decrementarTempoDescanso();
+      return super.decrementarTempoTrabalhoSeg();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void incrementarTempoDescansoMin() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.incrementarTempoDescansoMin');
+    try {
+      return super.incrementarTempoDescansoMin();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void incrementarTempoDescansoSeg() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.incrementarTempoDescansoSeg');
+    try {
+      return super.incrementarTempoDescansoSeg();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void decrementarTempoDescansoMin() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.decrementarTempoDescansoMin');
+    try {
+      return super.decrementarTempoDescansoMin();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void decrementarTempoDescansoSeg() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.decrementarTempoDescansoSeg');
+    try {
+      return super.decrementarTempoDescansoSeg();
     } finally {
       _$_PomodoroStoreActionController.endAction(_$actionInfo);
     }
@@ -191,8 +267,10 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
 iniciado: ${iniciado},
 minutos: ${minutos},
 segundos: ${segundos},
-tempoTrabalho: ${tempoTrabalho},
-tempoDescanso: ${tempoDescanso},
+tempoTrabalhoMin: ${tempoTrabalhoMin},
+tempoTrabalhoSeg: ${tempoTrabalhoSeg},
+tempoDescansoMin: ${tempoDescansoMin},
+tempoDescansoSeg: ${tempoDescansoSeg},
 tipoIntervalo: ${tipoIntervalo}
     ''';
   }

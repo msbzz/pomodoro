@@ -22,21 +22,21 @@ class Cronometro extends StatelessWidget {
             children: [
               Text(
                 store.estaTrabalhando()
-                    ? 'Hora de Trabalhar'
-                    : 'Hora de Descansar',
-                style: TextStyle(fontSize: 80, color: Colors.white),
+                    ? 'Atividade'
+                    : 'Intervalo',
+                style:  const TextStyle(fontSize: 80, color: Colors.white),
               ),
-              SizedBox(
+               const SizedBox(
                 height: 20,
               ),
               Text(
                 '${store.minutos.toString().padLeft(2, '0')}:${store.segundos.toString().padLeft(2, '0')}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 120,
                   color: Colors.white,
                 ),
               ),
-              SizedBox(
+               const SizedBox(
                 height: 20,
               ),
               Row(
@@ -44,26 +44,26 @@ class Cronometro extends StatelessWidget {
                 children: [
                   if (!store.iniciado)
                     Padding(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: const  EdgeInsets.only(right: 10),
                       child: CronometroBotao(
-                        texto: 'iniciar',
+                        texto: 'Iniciar',
                         icone: Icons.play_arrow,
                         click: store.iniciar,
                       ),
                     ),
                   if (store.iniciado)
                     Padding(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: const  EdgeInsets.only(right: 10),
                       child: CronometroBotao(
-                        texto: 'parar',
+                        texto: 'Parar',
                         icone: Icons.stop,
                         click: store.parar,
                       ),
                     ),
                   Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding:  const EdgeInsets.only(left: 10),
                     child: CronometroBotao(
-                      texto: 'reiniciar',
+                      texto: 'Reiniciar',
                       icone: Icons.refresh,
                       click: store.reiniciar,
                     ),
