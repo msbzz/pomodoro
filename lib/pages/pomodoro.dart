@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
 import 'package:pomodoro/compoments/cronometro.dart';
 import 'package:pomodoro/compoments/ajuste_tempo.dart';
 import 'package:pomodoro/store/pomodoro.store.dart';
@@ -17,7 +18,7 @@ class Pomodoro extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
+          const Expanded(
             child: Cronometro(),
           ),
           Padding(
@@ -71,7 +72,7 @@ class Pomodoro extends StatelessWidget {
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        AjusteTempo(
+                            AjusteTempo(
                           titulo: 'Atividade',
                           valorMin: store.tempoTrabalhoMin,
                           valorSeg: store.tempoTrabalhoSeg,
